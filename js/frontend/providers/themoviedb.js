@@ -21,10 +21,10 @@ App.findMovieInfo = function (imdbId, callback) {
             }, function (err, data) {
                 if (!err && data) {
                     if (data.overview === null || data.runtime === null) {
-                        default_movie = findInfo(id, "en")
+                        default_movie = findInfo(id, "en");
                         ["overview", "runtime"].each(function(key){
                             if (data[key] === null) {
-                                data[key] = default_movie[key]
+                                data[key] = default_movie[key];
                             }
                         });
                     }

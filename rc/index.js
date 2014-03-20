@@ -19,7 +19,7 @@ var io = sio.listen(server);
 io.set('log level', 0);
 
 io.sockets.on('connection', function(socket){
- 
+
   var movies = App.getTorrentsCollection({
     searchTerm: null,
     genre: null
@@ -29,7 +29,7 @@ io.sockets.on('connection', function(socket){
 
   movies.on('add', function(movie){
     socket.emit('movie', movie);
-  })
+  });
 
   socket.on('play', function(data){
     var movie = movies.find(function(model) { return model.get('torrent') === data.torrent; });

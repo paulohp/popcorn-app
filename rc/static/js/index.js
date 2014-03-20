@@ -14,7 +14,7 @@ hammer.on("swipeleft", function() {
 });
 */
 
-socket.on('movie', function(movie){ 
+socket.on('movie', function(movie){
   var $img = $('<img />').attr('src', movie.coverImage)
     .data(movie);
 
@@ -25,7 +25,7 @@ socket.on('movie', function(movie){
   });
 
 });
-//■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ 
+//■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 var $overlay = $('#overlay');
 var $info = $overlay.find('.info');
 
@@ -34,11 +34,11 @@ function showOverlay(movie) {
 
     var info = '<h1>'+movie.title+'</h1>' +
       '<h3>' + movie.year + ' ● ' + movie.runtime + 'min</h3>' +
-      '<p>' + movie.synopsis + '</p>' + 
+      '<p>' + movie.synopsis + '</p>' +
       '<a href="#">WATCH NOW</a>';
 
     $('#main').css('overflow', 'hidden');
-    $info.html(info)
+    $info.html(info);
     $overlay.show();
 
     $info.find('a').click(function(){
